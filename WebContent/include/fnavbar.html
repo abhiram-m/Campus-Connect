@@ -1,0 +1,58 @@
+<head>
+
+<script type="text/javascript">
+	function showAjax() {
+		var content = document.getElementById("showAjaxText").value;
+		doAjax("showAjaxId", "ajax.do?content=" + content);
+		document.getElementById("showAjaxId").style.display = "block";
+	}
+	function showClickText(obj) {
+		document.getElementById("showAjaxText").value = obj.innerHTML;
+		document.getElementById("showAjaxId").style.display = "none";
+	}
+</script>
+
+
+</head>
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-main-collapse">
+				<span class="sr-only">Toggle menu navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+
+			</button>
+			<a class="navbar-brand page-scroll" href="newsfeed.jsp"> <span
+				class="light">Campus</span> Connect
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div
+			class="collapse navbar-collapse navbar-right navbar-main-collapse">
+			<ul class="nav navbar-nav">
+				<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+				<li class="hidden"><a href="#page-top"></a></li>
+				<li><a class="page-scroll" href="FindProfile">My Profile</a></li>
+
+				<li><a class="page-scroll" href="Logout">Logout</a></li>
+
+			</ul>
+
+			<form class="navbar-form navbar-right" role="search" action="searchProfile">
+				<input type="text" onkeyup="showAjax()" id="showAjaxText"
+						style="width: 300px; height: 25px; background: scroll 0 0 #FFFFFF;" name="searchname">
+				<br/>
+				<div id="showAjaxId"
+					style="width: 300px; height: 220px; display: none; overflow-y: auto; overflow-x: hidden;">
+				</div>
+			</form>
+
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container -->
+</nav>
